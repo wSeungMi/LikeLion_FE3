@@ -1,0 +1,107 @@
+@import url(//fonts.googleapis.com/earlyaccess/notosanskr.css);
+
+* { 
+ font-family: 'Noto Sans KR', sans-serif;
+}
+
+body, h1, h2 {
+    margin: 0px;
+    padding: 0px;
+}
+
+body {
+    min-width: fit-content;
+}
+
+h1 {
+    font-size: 36px;
+    font-weight: bold;
+    font-style: italic;
+}
+
+h2 {
+    font-size: 20px;
+    font-weight: lighter;
+    color: #282828;
+    border-bottom: 1px solid #ebebeb;
+    padding-bottom: 10px;
+    margin-bottom: 16px
+}
+
+.name-text {
+    font-size: 17px;
+    color: #7c7c7c;
+}
+
+.mainbox {
+    width: 610px;
+    text-align: left;
+    padding: 35px;
+    margin: 30px auto;
+    border: 1px solid #ebebeb;
+    box-shadow: 0 1px 20px 0 rgba(0,0,0,0.1);
+}
+
+footer {
+    text-align: center;
+    background-color: #121212;
+    padding: 20px;
+    font-size: 12px;
+    color: #919191;
+}
+
+section {
+    margin-bottom: 24px;
+}
+
+.name-text {
+    font-size: 16px;
+    font-color: #7c7c7c;
+    font-weight: bold;
+}
+
+.about-me-text {
+    font-size: 10px;
+    line-height: 16px;
+}
+
+.title-text {
+    font-size: 11px;
+    font-weight: bold;
+    color: #282828;
+    float: left;
+}
+
+.year-text {
+    font-size: 11px;
+    font-weight: bold;
+    color: #282828;
+    float: right;
+}
+
+.float-wrap {
+    overflow: hidden;
+}
+
+.desc-text {
+    font-size: 9px;
+    color: #282828;
+}
+
+.desc-subtext {
+    font-size: 9px;
+    padding-left: 16px;
+}
+
+.title-box {
+    text-align: right;
+}
+
+.sns-img {
+    width: 12px;
+    height: 12px;
+}
+
+.sns-wrap {
+    text-align: right;
+}
