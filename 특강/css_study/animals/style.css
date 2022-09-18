@@ -1,0 +1,42 @@
+h1, p {
+  margin: initial;
+  padding: 0;
+}
+
+body {
+  background-image: url(images/bg.png);
+}
+
+.wrapper {
+  width: 250px;
+  border-radius: 0 0 15px 15px;
+  margin: 0 auto;
+}
+
+img {
+  vertical-align: top;
+  width: 100%;
+}
+
+h1 {
+  font-size: inherit;
+  font-weight: inherit;
+}
+
+.contents {
+  padding: 16px 16px 20px;
+  border-radius: 0 0 15px 15px;
+  background-color: #93572e;
+  box-shadow: 0 8px #4a260b;
+}
+
+.name {
+  color: white;
+  font-size: 28px;
+  font-weight: bold;
+  margin-bottom: 5px;
+}
+
+.explanation {
+  color: white;
+}

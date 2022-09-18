@@ -1,0 +1,55 @@
+h1, ul, li {
+  margin: 0;
+  padding: 0;
+}
+
+.wrapper {
+  width: 380px;
+  margin: 100px auto;
+  overflow: hidden;
+  background-color: #efefef;
+  border-radius: 30px;
+  box-shadow: 0 0 10px #bdbdbd;
+}
+
+body {
+  background-color: #dddddd;
+}
+
+.bucket-header-group {
+  display: block;
+  padding: 8px 0;
+  background-color: #fff;
+  border-bottom: 4px solid #dddddd;
+}
+
+/* header에 width값을 주고 padding을 주면 wrapper를 빠져나온다. */
+/* 상 우 하 좌 */
+.bucket-header {
+  border-left: 9px solid #ff1493;
+}
+
+.bucket-header h1 {
+  color: #ff1493;
+  font-size: 24px;
+  margin: 25px 25px 20px 23px;
+  background-color: #red;
+}
+
+ul {
+  padding: 16px;
+  list-style-type: none;
+}
+
+li {
+  border: 4px solid #aaaaaa;
+  margin: 12px;
+  padding: 10px;
+  border-radius: 5px;
+  background-color: #fff;
+}
+
+li:nth-child(2) {
+  border: 4px solid #1e91ff;
+  color: #1e91ff;
+}

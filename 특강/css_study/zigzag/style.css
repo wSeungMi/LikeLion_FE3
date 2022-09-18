@@ -1,0 +1,59 @@
+:root {
+    font-family: 'Montserrat', sans-serif;
+	/*
+	font-weight: 500;
+	font-weight: 700;
+	*/
+}
+
+/* 초기화 */
+body {
+	margin: 0;
+}
+
+p {
+	margin: 0;
+}
+
+/* 헤딩 초기화 */
+h1, h2, h3{ 
+	margin: 0;
+	font-size: inherit;
+	font-weight: inherit;
+}
+
+.section-header {
+	background-color: #673399;
+	max-width: 1080px;
+	margin: 100px auto;
+}
+
+.header-portfolio {
+	display: flex;
+	flex-direction: row;
+	align-items: center;
+}
+
+.header-title {
+	color: #fff;
+	font-size: 40px;
+	background-color: orange;
+}
+
+.header-description {
+	color: #bd8fe8;
+	font-size: 14px;
+	width: 600px;
+	display: flex;
+	align-items: center;
+}
+
+.header-description::before {
+	display: block;
+	content: "";
+	width: 300px;
+	height: 2px;
+	margin: 0 20px;
+	background-color: #bd8fe8;
+}
+
