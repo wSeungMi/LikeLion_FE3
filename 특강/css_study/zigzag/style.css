@@ -6,9 +6,16 @@
 	*/
 }
 
+.wrapper {
+	max-width: 1080px;
+	margin: 100px auto;
+	border: 1px solid orange;
+}
+
 /* 초기화 */
 body {
 	margin: 0;
+	background-color: #673399;
 }
 
 p {
@@ -23,9 +30,35 @@ h1, h2, h3{
 }
 
 .section-header {
-	background-color: #673399;
-	max-width: 1080px;
-	margin: 100px auto;
+	display: flex;
+	position: relative; 
+	margin-bottom: 100px;
+	/* border: 1px solid orange; */
+}
+
+/* 가상요소 조정을 위해 relative 넣음 */
+.section-header h1 {
+	flex-basis: 280px;
+}
+
+.section-header::before {
+	content: "";
+	position: absolute;
+	width: 245px;
+	height: 20px;
+	top: 79px;
+	z-index: -1;
+	background-color: #ff4500;
+}
+
+.section-header::after {
+	content: "";
+	position: absolute;
+	width: 191px;
+	height: 20px;
+	top: 130px;
+	z-index: -1;
+	background-color: #ff4500;
 }
 
 .header-portfolio {
@@ -37,7 +70,7 @@ h1, h2, h3{
 .header-title {
 	color: #fff;
 	font-size: 40px;
-	background-color: orange;
+	/* border: 1px solid gray; */
 }
 
 .header-description {
@@ -46,14 +79,38 @@ h1, h2, h3{
 	width: 600px;
 	display: flex;
 	align-items: center;
+	line-height: 1.5em;
+	/* background-color: pink; */
 }
 
+/* 헤더-설명 라인 */
+/* 가상요소의 초기값은 대체 무엇인지..? 적용하는 요소의 기본 속성을 상속받게 되는게 맞는지..? */
 .header-description::before {
-	display: block;
+	position: relative;
 	content: "";
 	width: 300px;
 	height: 2px;
-	margin: 0 20px;
-	background-color: #bd8fe8;
+	margin: 0 20px; 
+  background-color: #bd8fe8;
 }
+
+.portfolio-card {
+	display:flex;
+	position: relative;
+}
+
+.portfolio-img {
+	width: 26%;
+	height: 156px;
+	background-image: url(./images/photo01.png);
+}
+
+/* flex여서 콘텐츠 크기만큼만 영역차지 */
+.portfolio-description {
+	width: 74%;
+	padding: 24px;
+	background-color: pink;
+}
+
+
 
