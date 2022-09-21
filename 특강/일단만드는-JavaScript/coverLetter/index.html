@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>자소서 글자수 계산기</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z" crossorigin="anonymous">
+    <style>
+        h1 {
+            margin-top: 30px;
+        }
+        #count {
+            float: right;
+        }
+    </style>
+</head>
+<body class="container">
+    <h1>자기소개</h1>
+    <!-- 3. 글자를 쓸 때마다 자동으로 글자 수를 세자 -> 키보드를 누를 때마다 글자 수를 세어라! (이벤트) -->
+    <textarea class="form-control" rows="3" id="jasoseol" onkeydown="counter();">저는 인성 문제가 없습니다.</textarea>
+    <span id="count">(0/200)</span>
+    <script>
+        // console.log('코드라이언');
+        // var content = document.getElementById('jasoseol').value
+        
+        // 1. DOM 연습
+        // .length : string자료형에 붙이면 문자열 길이 
+        // console.log(content.length); 
+        // JS는 자동 형변환이 된다
+        // document.getElementById('count').innerHTML = '(' + content.length + '/200)';
+
+        // 2. 함수로 만든다.
+        function counter() {
+            var content = document.getElementById('jasoseol').value;
+            // 4. 200글자 제한 = 200글자가 넘어가면 문자열을 잘라라
+            if (content.length > 200) {
+                content = content.substring(0,200);
+                document.getElementById('jasoseol').value = content;
+            }
+            document.getElementById('count').innerHTML = '(' + content.length + '/200)';
+        }
+        counter();
+
+    </script>
+</body>
+</html>

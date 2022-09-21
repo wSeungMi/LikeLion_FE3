@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>lotto 추첨기</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <h1>로또 번호 추첨기</h1>
+    <!-- <p> 1이상~45이하 정수(int)를 뽑아와야 한다.</p> -->
+    <!-- 1. Math.random() * 45 -> 0 ~ 45미만 실수 생성, 
+            Math.random() * 45 + 1로 1~46미만 실수 생성 
+         2. 실수(float)를 정수(int)로 변환 (parseInt()사용)
+    -->
+    <script>
+      // 1. 공 하나만 뽑아오기
+      // var num = Math.random();
+      // document.write(num);
+
+      // 2. 배열사용법
+      // var lotto = [1,2,3,4,5,6];
+      // lotto.push(7) // 마지막에 값 추가
+      // document.write(lotto);
+
+      //2-1. 임의의 숫자 6개를 사용하는 배열 
+      //var lotto = []; // 빈 배열 생성
+      // ()안에 1~45를 생성하는 정수 생성
+      /*lotto.push(parseInt(Math.random() * 45 + 1));
+      lotto.push(parseInt(Math.random() * 45 + 1));
+      lotto.push(parseInt(Math.random() * 45 + 1));
+      lotto.push(parseInt(Math.random() * 45 + 1));
+      lotto.push(parseInt(Math.random() * 45 + 1));
+      lotto.push(parseInt(Math.random() * 45 + 1));
+      document.write(lotto);*/
+
+      //반복문 사용
+      // for (var i =0; i < 6; i++) {
+      //   document.write(i);
+      // }
+
+      //반복문 사용해서 6개 번호 추첨하기
+      // var lotto = [];
+      // for (var i = 0; i < 6; i++){
+      //     lotto.push(parseInt(Math.random() * 45 + 1));
+      // }
+      // document.write(lotto);
+
+      /*
+        중복처리 조건문 사용 
+        조건처리 : 만약 중복이 아니라면 .push()
+      */
+      /* var lotto = [];
+      for (var i = 0; i < 6; i++){
+          var num = parseInt(Math.random() * 45 + 1);
+          if (lotto.indexOf(num) == -1) {
+            lotto.push(num);
+          }
+      }
+      document.write(lotto); */
+
+      /* 숫자 6개가 모두 나올 수 있도록 while문 사용 */
+      /*var lotto = [];
+      while (lotto.length < 6){
+          var num = parseInt(Math.random() * 45 + 1);
+          if (lotto.indexOf(num) == -1) {
+            lotto.push(num);
+          }
+      }
+      document.write(lotto);*/
+
+      //정렬순서 
+      /*var lotto = [1,2,3,33,22,11];
+      lotto.sort((a,b)=>a-b);
+      document.write(lotto);*/
+
+      //순서정렬 추가
+      // var lotto = [];
+      //   while (lotto.length < 6) {
+      //       var num = parseInt(Math.random() * 45 + 1);
+      //       if (lotto.indexOf(num) == -1) {
+      //           lotto.push(num);
+      //       }
+      //   }
+      //   lotto.sort((a,b)=>a-b);
+      //   document.write(lotto);
+    
+    // 최종코드
+    // html을 그려주고, style.css를 불러와주면 됨!
+    var lotto = [];
+        while (lotto.length < 6) {
+            var num = parseInt(Math.random() * 45 + 1);
+            if (lotto.indexOf(num) == -1) {
+                lotto.push(num);
+            }
+        }
+        lotto.sort((a,b)=>a-b);
+        document.write("<div class='ball ball1'>" + lotto[0] + "</div>");
+        document.write("<div class='ball ball2'>" + lotto[1] + "</div>");
+        document.write("<div class='ball ball3'>" + lotto[2] + "</div>");
+        document.write("<div class='ball ball4'>" + lotto[3] + "</div>");
+        document.write("<div class='ball ball5'>" + lotto[4] + "</div>");
+        document.write("<div class='ball ball6'>" + lotto[5] + "</div>");
+    </script>
+</body>
+</html>

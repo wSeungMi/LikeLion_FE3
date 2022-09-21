@@ -1,0 +1,1 @@
+document.write('맛있는거 먹고싶어요')
