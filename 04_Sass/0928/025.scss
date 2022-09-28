@@ -1,0 +1,9 @@
+$seungmi: 10;
+@while $seungmi > 1 {
+    $seungmi: $seungmi - 2;
+    .content-#{$seungmi} {
+        width: 100px;
+        height: 100px;
+        background: red;
+    }
+}

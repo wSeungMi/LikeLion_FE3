@@ -1,0 +1,8 @@
+// #{$변수명}
+
+@for $seungmi from 1 through 3 {
+    .profile-#{$seungmi} {
+        background-color: red;
+        font-size: #{$seungmi * 10}px;
+    }
+}

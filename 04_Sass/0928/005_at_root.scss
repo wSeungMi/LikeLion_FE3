@@ -1,0 +1,15 @@
+// @at-root : 밖으로 빠져나오게!
+// Q. 부모요소에 준 속성은 상속이 안되나요? A. yes.
+.one {
+    background: yellow;
+    .two {
+        font-size: 20px;
+        @at-root .three {
+            display: flex;
+        }
+    }
+}
+
+.four {
+    display: flex;
+}

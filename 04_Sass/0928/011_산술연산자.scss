@@ -1,0 +1,41 @@
+.one {
+    font-size: 10px + 10px;
+}
+
+.two {
+    font-size: 10px - 10px;
+}
+
+// 리스트와 혼동될 수 있어 괄호 사용 권장 (괄호없이 연산하면 문자열로 반환됨) -> 연산된 결과값이 아니라 10px/10 이렇게 변환!
+.three {
+    font-size: (10px / 10);
+}
+
+// error
+// .four {
+//     font-size: 10px * 10px;
+// }
+
+//error
+// .four {
+//    font-size: (10px * 10px);
+// }
+
+.four {
+    font-size: 10px * 10;
+}
+
+// error
+// .five {
+//     font-size: 10px ** 10px;
+// }
+
+// 곱하기, 나누기와는 다르게 2개의 단위가 모두 있어도 에러가 나지 않음
+// 앞의 값으로 반환함
+// .six {
+//     font-size: 10px % 3px;
+// }
+
+// .six {
+//     font-size : 10px % 3;
+// }
