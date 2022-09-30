@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>0930_js기초_산술연산</title>
+</head>
+<body>
+    <script>
+        let one = 10;
+        let two = 3;
+        console.log(one + two);
+        console.log(one - two);
+        console.log(one / two);
+        console.log(one * two);
+        console.log(one ** two); // 10^3 == 10의 3승
+        console.log(one % two); // 나머지 연산자
+        console.log(one, one, two, two);
+
+        // 구구단 출력하기
+        console.log(one, "X", two, "=", one * two); // 권장하지 않음
+        console.log(one + " X " + two + " = " + one * two); // 권장하지 않음
+
+        // 템플릿 리터럴
+        // 권장하지 않음(템플릿 리터럴을 권장하지 않는다는 말이 아님)
+        // ${} 내부에 계산식을 넣지 않는 것을 권장하지 않음(에러나는 건 아니지만 사용하지 않는 이유가 명확히 있어서임!)
+        console.log(`${one} X ${two} = ${one * two}`);
+
+        // 권장사항
+        let three = one * two;
+        console.log(`${one} X ${two} = ${three}`);
+
+        // error (개행이 가능함)
+        // console.log ('h
+        // e
+        // l 
+        // l 
+        // o');
+
+        // 개행이 가능함
+        console.log(`h
+        e
+        l
+        l
+        o`);
+
+    </script>
+</body>
+</html>

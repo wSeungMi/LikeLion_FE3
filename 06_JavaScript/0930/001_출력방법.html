@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>0930_js 기초</title>
+</head>
+<body>
+    <p id="one"></p>
+    
+    <script>
+        // 출력하는 방법 ( . = 메서드 체이닝)
+        /* 
+           about:blank에서 개발자 도구를 열고, 
+           console -> document.이라고 치면
+           여러가지 document 메서드를 확인할 수 있음.
+        */
+        // 개행 ok
+        // innerHTML -> 자신의 앞에 있는 요소의 메소드
+        document.getElementById("one").innerHTML =
+            "hello <strong>world 1</strong>";
+        console.log("hello world 2");     
+
+        // window는 브라우저 크기 볼 때 많이 사용
+        window.alert("hello world 3");
+        document.write("hello world 4");   
+    </script>
+</body>
+</html>
