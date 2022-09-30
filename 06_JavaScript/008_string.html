@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>0930_js기초_string</title>
+</head>
+<body>
+    <script>
+        // string, 문자열
+        let txt = "ABCDEFGHIJK";
+        let txt2 = "mom said 'hello world'";
+        let txt3 = "mom said \"hello 'hello world' world\""; // 이스케이프 문자
+        // \'(싱글 쿼테이션), \"(더블 쿼테이션)
+        let txt4 = "a\nb\ncde"; // \n 개행
+        let txt5 = "a\tbcde"; // \t 탭 
+        let txt6 = "10"
+        let txt7 = "10abc"; 
+        let txt8 ="10.1abc"; // "10.1", "100.1abc" (소수점은 parseFloat)
+        console.log(txt + txt); // 문자열의 덧셈은 이어붙임
+        console.log(txt[0]); 
+
+        console.log(txt[-1]); // undefined 출력
+        
+        console.log(txt[4] + txt[5] + txt[6]);
+        console.log(txt2);
+        console.log(txt3);
+        console.log(txt4);
+        console.log(txt5);
+        console.log(txt5[1]); // \t를 1개의 문자열로 처리함
+        console.log(txt6 + txt6);
+        console.log(parseInt(txt6) + parseInt(txt6));
+        // console.log(Number(txt7) + Number(txt7)); //NaN
+        console.log(parseFloat(txt7) + parseFloat(txt7));
+
+        // 컴퓨터는 +만 보고 연산을 할지, 이어붙일지 모르기때문에 '자료형'이 필요한 것!
+        // 자료형을 만나면
+        console.log(typeof txt);
+        // console.dir(txt);
+
+        // string의 메서드 (콘솔에서 변수명. 쳤을 때 나오는 목록들)
+        console.log(txt.length); // 11개의 글자지만, index는 length -1 해줘야 함(0부터 시작하기 떄문)
+
+        // indexOf는 정규표현식을 허용하지 않음.
+        console.log(txt.indexOf('E'));
+        console.log(txt.search("F"));
+
+        console.log(txt.indexOf('Z')); // index에 없을 경우 -1 반환(이것도 문제가 좀 있다~ 0부터 안나오는 이유는 인덱싱이 0부터 시작이라서. 중요한건 반복문에서는 0이 false여서 값을 찾을 수가 없고 -1은 true로 처리되서 혼란이 가중됨)
+        console.log(txt.search("Z"));
+
+        let regExp = /CD/; // 정규표현식
+        console.log(txt.search(regExp));
+    </script>
+</body>
+</html>
