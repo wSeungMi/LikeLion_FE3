@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>1014_Javascript문자열 사용</title>
+</head>
+<body>
+    <p></p>
+    <input type="text">
+    <button>Write Something!</button>
+
+    <script>
+        const myBtn = document.querySelector("button");
+        const myP = document.querySelector("p");
+        const myInput = document.querySelector("input");
+        
+        // textContent 속성은 노드의 텍스트 콘텐츠를 의미함
+        // button type click
+        // myBtn.addEventListener('click', function(){
+        //     myP.textContent = myInput.value;
+        // });
+
+        // input type input
+        myInput.addEventListener('input', funtction ()
+        {
+            myP.textContent = myInput.value;
+        });
+        
+        // myInput.addEventListener('input', ()=>{
+        //     myP.textContent = myInput.value;
+        // });
+
+        // innerHTML(원하는 UI를 구현할 때 편리!)
+        // myP.innerHTML = "<strong>I'm Strong!!</strong>";
+
+        // innerHTML로 한번에 처리하는 것보단 아래처럼 사용하는게 조금 더 빠르다.
+        // 하지만 실무에서는 innerHTML로 쓰는게 더 적절!
+        const elStrong = document.createElement('strong');
+        const mytxt = document.createTextNode("I'm strong!!");
+        elStrong.appendChild(mytxt);
+        myP.appendChild(elStrong);
+
+        // outerHTML
+        // myP.outerHTML = "<div></div>";
+
+    </script>
+</body>
+</html>
