@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>1004_js 기초_헷갈리는 것 정리</title>
+</head>
+<body>
+    <script>
+        console.log("- 0 -");
+        // true와 숫자값의 비교
+        console.log(true == 1); // true (타입을 무시하고 비교)
+        console.log(false == 0); // true
+        console.log(true === 1); // false
+        console.log(false === 0); // false
+
+        console.log("---------------");
+        console.log("- 1 -");
+        // NaN만 자기자신이 자기자신이 아닌(?) 특이케이스(NaN은 1시간 동안 하니 그때 다시~)
+        console.log(NaN == NaN); // false(?왜요)..
+        console.log(NaN === NaN); // false
+
+        console.log("- 2 -");
+        // true일 것 같은 혼란스러운 녀석들(ㅋㅋ)
+        console.log(false == null); 
+        console.log(false == NaN);
+        console.log(false == undefined);
+
+        console.log("- 3 -");
+        // 연산자를 이용한 형 변환
+        // 암묵적 형변환은 의도를 파악하기 어려워서 사용을 자제하기 권고
+        // 명시적 형변환 -> e.g. (Number(false))
+        console.log(+false); // +가 붙으면 숫자(number)로 형변환 -> false는 0, true는 1
+        console.log(+true); // +가 있으면 +,- (양수,음수)를 표현해주겠다는 의미
+        // console.log(-false); // 이 코드는 되기는 하는데, 사용 거의 X
+        console.log(false * 1); // false (0)
+        console.log(true * 1); // true (1)
+
+        // 둘 중의 하나가 문자열(string)이면 모두 문자열로 바꿔줌
+        console.log(1 + "12"); // string (콘솔창 검정이면 string)
+        console.log(NaN + ""); // -> "NaN"
+        console.log(Infinity + ""); // -> "Infinity"
+        console.log(true + ""); // -> "true"
+        console.log(false + ""); // -> "false"
+        console.log("12" + 1); // string
+        console.log(+"100" + 10); // number
+
+        console.log(0 == -0); // true -> 이해 X.. 그냥 외우기
+
+        console.log(+"10" + +"10"); // 20
+
+        // 일부러 유지보수하기 어렵게 만들 이유가 아니라면 이렇게 짜시면 X
+        console.log("2" + "2" - "2"); // 순서대로 연산됨
+        console.log("2" + "2"); // '22' (문자)
+        console.log("2" - "2"); // error X, 수학적 연산을 하려고 하는구나! Number로 던져줍니다. (문자열에서는 +만 허용)
+        console.log("a" - "a"); // NaN -> number 타입으로 연산시도했지만 실패!
+    </script>
+</body>
+</html>

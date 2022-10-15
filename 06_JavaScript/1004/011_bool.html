@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>1004_js기초_boolean</title>
+</head>
+<body>
+    <script>
+        // const(참조 변경 불가), let(변경 가능), var(쓰지말 것! 스코프를 강제하지 않아서 견고한 코딩 X)
+        // 코드리뷰시에 const를 사용하면 1000줄 코드 이후에도 리턴값이 변경되지 않음을 알 수 있음
+        // let을 사용하면 1000줄 코드 이후에 리턴값이 뭔지 파악이 어려울 수 있음
+
+        let one = true; // 다른 언어는 True인 경우도 있음, JS는 true!
+        let two = false;
+        let three; // undeifined == 값 할당 X
+        let four = null; // 비어있는 값을 명시 == null
+        let five = Infinity; // 무한대수 -> 비교에서 많이 사용함(최대값, 최소값을 활용한 값의 정렬/-도 가능)
+
+        console.log(Boolean("")); // false
+        console.log(Boolean(" ")); // true(공백=문자), 문자열이 있으면 true
+        console.log(Boolean("abc")); // true
+        console.log(Boolean(0)); // false
+        console.log(Boolean(100)); // true
+        console.log(Boolean(-100)); // true (0외의 다른 숫자는 모두 true)
+        console.log(Boolean(three)); // false
+        console.log(Boolean(four)); // false
+        console.log(Boolean(five)); // true (0외의 다른 숫자는 true)
+        one = "";
+
+        // 우리를 힘들게 하는 JS
+        // 파이썬이나 다른 언어에서는 빈 Array는 false임! (특히 while 무한루프는 메모리 다운시키니 사용 절대 주의!)
+        /*
+            파이썬
+            x = [10, 20, 30]
+            while x :
+                pring(x.pop())
+            -> 결과값 30, 20, 10
+            -> while문이 다 돌고나면 배열이 x = [] false여서 종료
+        */
+        console.log(Boolean([])); // true (문자취급 X, Array인데 빈 Array로 처리하는 것!) -> 다른 언어에서는 false가 나옴
+        console.log(Boolean({})); // true
+    
+        if (one) {
+            console.log("[결과 true] hello");
+        } else {
+            console.log("[결과 false] world");
+        }
+    </script>
+</body>
+</html>

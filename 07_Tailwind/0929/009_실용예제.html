@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html lang="ko">
+    <head>
+        <meta charset="UTF-8" />
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>실용예제</title>
+        <script src="https://cdn.tailwindcss.com"></script>
+    </head>
+    <body>
+        <div class="flex font-sans">
+            <div class="flex-none w-48 relative">
+                <img
+                    src="profile.jpg"
+                    alt=""
+                    class="absolute inset-2 w-full h-full object-cover"
+                />
+            </div>
+            <form class="flex-auto p-6">
+                <div class="flex flex-wrap">
+                    <h1 class="flex-auto text-lg font-semibold text-slate-900">
+                        Classic Utility Jacket
+                    </h1>
+                    <div class="text-lg font-semibold text-slate-500">
+                        $110.00
+                    </div>
+                    <div
+                        class="w-full flex-none text-sm font-medium text-slate-700 mt-2"
+                    >
+                        In stock
+                    </div>
+                </div>
+                <div
+                    class="flex items-baseline mt-4 mb-6 pb-6 border-b border-slate-200"
+                >
+                    <div class="space-x-2 flex text-sm">
+                        <label>
+                            <input
+                                class="sr-only peer"
+                                name="size"
+                                type="radio"
+                                value="xs"
+                                checked
+                            />
+                            <div
+                                class="w-9 h-9 rounded-lg flex items-center justify-center text-slate-700 peer-checked:font-semibold peer-checked:bg-slate-900 peer-checked:text-white"
+                            >
+                                XS
+                            </div>
+                        </label>
+                        <label>
+                            <input
+                                class="sr-only peer"
+                                name="size"
+                                type="radio"
+                                value="s"
+                            />
+                            <div
+                                class="w-9 h-9 rounded-lg flex items-center justify-center text-slate-700 peer-checked:font-semibold peer-checked:bg-slate-900 peer-checked:text-white"
+                            >
+                                S
+                            </div>
+                        </label>
+                        <label>
+                            <input
+                                class="sr-only peer"
+                                name="size"
+                                type="radio"
+                                value="m"
+                            />
+                            <div
+                                class="w-9 h-9 rounded-lg flex items-center justify-center text-slate-700 peer-checked:font-semibold peer-checked:bg-slate-900 peer-checked:text-white"
+                            >
+                                M
+                            </div>
+                        </label>
+                        <label>
+                            <input
+                                class="sr-only peer"
+                                name="size"
+                                type="radio"
+                                value="l"
+                            />
+                            <div
+                                class="w-9 h-9 rounded-lg flex items-center justify-center text-slate-700 peer-checked:font-semibold peer-checked:bg-slate-900 peer-checked:text-white"
+                            >
+                                L
+                            </div>
+                        </label>
+                        <label>
+                            <input
+                                class="sr-only peer"
+                                name="size"
+                                type="radio"
+                                value="xl"
+                            />
+                            <div
+                                class="w-9 h-9 rounded-lg flex items-center justify-center text-slate-700 peer-checked:font-semibold peer-checked:bg-slate-900 peer-checked:text-white"
+                            >
+                                XL
+                            </div>
+                        </label>
+                    </div>
+                </div>
+                <div class="flex space-x-4 mb-6 text-sm font-medium">
+                    <div class="flex-auto flex space-x-4">
+                        <button
+                            class="h-10 px-6 font-semibold rounded-md bg-black text-white"
+                            type="submit"
+                        >
+                            Buy now
+                        </button>
+                        <button
+                            class="h-10 px-6 font-semibold rounded-md border border-slate-200 text-slate-900"
+                            type="button"
+                        >
+                            Add to bag
+                        </button>
+                    </div>
+                    <button
+                        class="flex-none flex items-center justify-center w-9 h-9 rounded-md text-slate-300 border border-slate-200"
+                        type="button"
+                        aria-label="Like"
+                    >
+                    <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-6 h-6">
+                        <path stroke-linecap="round" stroke-linejoin="round" d="M2.25 18.75a60.07 60.07 0 0115.797 2.101c.727.198 1.453-.342 1.453-1.096V18.75M3.75 4.5v.75A.75.75 0 013 6h-.75m0 0v-.375c0-.621.504-1.125 1.125-1.125H20.25M2.25 6v9m18-10.5v.75c0 .414.336.75.75.75h.75m-1.5-1.5h.375c.621 0 1.125.504 1.125 1.125v9.75c0 .621-.504 1.125-1.125 1.125h-.375m1.5-1.5H21a.75.75 0 00-.75.75v.75m0 0H3.75m0 0h-.375a1.125 1.125 0 01-1.125-1.125V15m1.5 1.5v-.75A.75.75 0 003 15h-.75M15 10.5a3 3 0 11-6 0 3 3 0 016 0zm3 0h.008v.008H18V10.5zm-12 0h.008v.008H6V10.5z" />
+                      </svg>
+                    </button>
+                </div>
+                <p class="text-sm text-slate-700">
+                    Free shipping on all continental US orders.
+                </p>
+            </form>
+        </div>
+    </body>
+</html>

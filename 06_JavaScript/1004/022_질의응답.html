@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>1004_js기초_array 질의응답</title>
+</head>
+<body>
+    <script>
+        // 앞으로 데이터의 원본 수정은 기피(지양)하는 게 좋음!
+        // 원본 수정 없이 값을 수정하고 싶을 때
+        // 원본을 수정하지 않으려면 스프레드 용법을 써서 새로운 객체를 만든다!
+        let x = [10, 20, 30, 40];
+        console.log([...x].pop()); // 스프레드 용법에서 새로운 array를 만들어 pop으로 데이터 수정
+        console.log(x);
+
+        let y = [...x];
+        y.pop()
+        console.log(y);
+    </script>
+</body>
+</html>

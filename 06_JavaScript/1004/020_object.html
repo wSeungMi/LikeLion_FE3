@@ -1,0 +1,185 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>1004_js기초_object</title>
+</head>
+<body>
+    <script>
+        // Object
+        // **인덱스라는 개념이 없다!
+
+        // 1. 기본 형태
+        let newuser = {
+            // key : value
+            id : 'fe3',
+            pw : '1234', // 비밀번호는 보통 암호화 처리해서 저장함("MD5"는 사용 X)
+            name : 'wooseungmi',
+            email : 'seungmi@email.com',
+            active : true // 3개월 이상 접속 안함 -> 비활성화 -> false로 바꾸고 휴면계정으로 전환
+        }
+
+        // 객체에 접근하는 방법
+        console.log(newuser["id"]); // 안쪽에 key를 불러오려면 문자열을 불러오는 "" 형태 -> 강사님이 선호!
+        // console.log(newuser[id]); // error
+        console.log(newuser.id);
+        // console.log(newuser."id"); // error
+
+        // 테스트 (해시테이블)
+        // 2. 아래와 같은 형태로 많이 사용됨
+        let user = [
+            {
+                // key : value
+                id: "licat",
+                pw: "1234", // 81DC9BDB52D04DC20036DBD8313ED055 이렇게 저장합니다. ("MD5는 사용하지 않습니다.")
+                name: "leehojun",
+                email: "paul@weniv.com",
+                active: true,
+            },
+            {
+                // key : value
+                id: "lion",
+                pw: "2345", // 81DC9BDB52D04DC20036DBD8313ED055 이렇게 저장합니다. ("MD5는 사용하지 않습니다.")
+                name: "leehojin",
+                email: "pa@weniv.com",
+                active: true,
+            },
+        ];
+
+        console.log(user[0]["id"]); // {} 이걸 크게 하나의 index로 봄
+
+        // 3. 아래와 같이 선언 가능
+        // key: a, value: 10
+        let a = 10;
+        let b = 20;
+        let c = 30;
+        let e = { a, b, c };
+        // let e = {a=10, b=20, c=30};
+        console.log(e);
+
+        // let test = {'one', 'two', 'three'}
+        // console.log(test);
+
+        // 4. 값을 변경할 수 있음
+        e["a"] = 50; // e라는 객체에 a라는 키를 가지고 있는.. 
+        console.log(e);
+        
+        // 5. key 값으로 문자열 외에 다른 값을 넣었을 경우
+        // 문자열도 배열처럼 인덱스를 가지고 있음
+        let txt = "hello";
+        let txt2 = {
+            0: "h",
+            1: "e",
+            2: "l",
+            3: "l",
+            4: "o"
+        }
+
+        console.log(txt[1]); // e가 출력됨, key값이 숫자일 경우 ""유무 상관없이 가능, string일 경우에는 "" 무조건 붙여야 함!
+        console.log(txt2[1]); // 유사 배열 객체
+
+        // 아래 2개 코드가 실행되게 해주는 것이 map
+        // console.log(txt2.1); // map (비교적 최신 문법)
+        // console.log(txt2.{'one' : 1}); // map
+
+
+        // 6. value의 값으로 문자열 외에 다른 값을 넣었을 경우
+        let test = {
+            one: sum,
+            two: console.log,
+            three: window.innerWidth,
+            four: [10, 20, 30],
+            five: '10',
+            six: 100
+        }
+        console.log(test);
+        test['two']('이렇게도 된다!');
+        test.two("승미!!");
+        console.log(test.three);
+        console.log(test['three']);
+        console.log(test.four);
+        console.log(test.four[1]); // 20
+
+
+        // 7. key와 value만 뽑아낼 수 없을까?
+        console.log(Object.keys(newuser));
+        console.log(Object.values(newuser));
+        console.log(Object.entries(newuser)); // 값 전부를 뽑아냄
+
+        // map에서 사용할 수 있음
+        // newuser.keys();
+        // newuser.values();
+        // newuser.entries();
+
+        // 공식문서 볼 때 참고!
+        // prototype이 안붙으면 Object.keys 이런식으로 그대로 사용해야 함
+        // prototype이 붙으면 Object를 안붙여씀!
+    
+
+        // 8. Object spread 용법 (값을 펼칠 때 사용!)
+        // 원래 정보
+        // let newuser = {
+        //     id: "licat",
+        //     pw: "1234",
+        //     name: "leehojun",
+        //     email: "paul@weniv.com",
+        //     active: true,
+        // };
+
+        let 회원정보업데이트 = {
+            name : 'cat',
+            email : 'abcd@email.com',
+        }
+
+        // newuser["name"] = 회원정보업데이트["name"];
+        // newuser["email"] = 회원정보업데이트["email"];
+        // console.log(newuser);
+
+        // spread 문법은 안의 데이터를 쭈욱 펼침
+        newuser = {...newuser, ...회원정보업데이트};
+        console.log(newuser);
+
+        // 테스트
+        // 이렇게 바꾸면 2개가 다 바뀜
+        // let newuser2 = newuser; // 둘은 다른 정보인데..
+        // newuser2["id"] = "helloworld";
+        // // = 때문에 newuser2가 newuser를 가리켜서 같은 정보가 되어버림
+        // console.log(newuser); 
+        // console.log(newuser2);
+
+        // 위의 문제를 해결!
+        // spread 용법을 사용하면 원본을 만지지 않음!
+        let newuser2 = { ...newuser };
+        newuser2["id"] = "helloworld";
+        console.log(newuser); 
+        console.log(newuser2);
+
+        // = 는 포스트잇 같은 것, 가리키는 것! A = B면 A가 B를 가리킴
+        // =를 등호대신 assignment (할당) 연산자로 보면 조금 편함
+        // 스프레드 용법을 사용하지 않으면, A = B에서 새로운 값 B가 A에 들어감!
+
+        
+        // 함수는 후에 자세히 다룸!
+        // Q. 방금 예시에서 sum이 정의되지 않았다고 되어있는데, 이 경우함수를 위에 정의해주어야 쓸 수 있을까요?
+        // A. 호이스팅에서 자세히 배움
+        // Javascript function typeof object
+        function sum(x, y) {
+            return x + y
+        }
+
+        console.log(sum); // function의 기능 전체 출력
+        console.log(typeof sum);  // function
+
+        sum.value = 'seungmi'; // console.log(console.dir(sum))을 해보면 key:value로 사용이 가능함
+
+        // Tmi입니다. 뒤에서 다룰 내용이에요.
+        // console.log(typeof sum);
+        // sum.value = 'hojun';
+        // console.log(console.dir(sum));
+        // console.log(sum.value);
+        // console.log(typeof sum);
+    </script>
+</body>
+</html>

@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>1004_js기초_Array</title>
+</head>
+<body>
+    <script>
+        // 0. array
+        // 값의 변경이 가능함
+        // 대부분 동일한 자료의 형태가 반복됨
+        // array는 key:value가 아니라 쭉 이어붙여져 있는 구조
+        // 배열이라 순서도 있고 index도 있음!
+        let 과일 = ['사과', '수박', '복숭아', '딸기', '바나나'];
+        console.log(과일[1]);
+        let 꺼낸과일 = 과일.pop(); // 마지막 데이터를 꺼내기
+        console.log(과일);
+        과일.push("멜론"); // 데이터를 다시 넣기(마지막 순서로)
+        console.log(과일);
+        과일.push(꺼낸과일);
+        console.log(과일);
+
+
+        // 1. matrix(행렬)에서 값 찾기
+        let array = [
+            [1, 2, 3],
+            [4, 5, 6],
+            [7, 8, 9]
+        ]
+        // 6이라는 값을 찾아보세요!
+        // console.log(array[?][?]);
+        console.log(array[1][2]); // 해결!
+
+
+        // Tmi
+        // 굉장히 다양한 자료형이 들어갈 수 있음(어떤 자료형이든 Ok!)
+        // but, 실무에서는 대부분 같은 자료형으로 씀!
+        function sum(x, y) {
+            return x + y
+        }
+        let test = [1, 2, 3];
+        let obj = {'one':1, 'two':2};
+        let data = [console.log, sum, test, obj]; 
+        // data[0]('hello world') 사용.. 이게 가능하다니...
+        // data[2][1] -> 2 출력 (index 2번째에서 1번째 것 출력)
+
+        // Tmi2
+        // 알고리즘 테스트..무슨 문제지? 
+        // 0번째 인덱스에 동일한 숫자가 있으면 초기화(없앤다) -> 그러면 0번째 인덱스 정보들을 어떻게 빼올거냐..
+        let testalgo = [
+            [0, 0, 0, 0, 0, 0, 0, 0],
+            [0, 0, 0, 0, 0, 0, 0, 0],
+            [7, 0, 0, 0, 0, 0, 0, 0],
+            [7, 0, 0, 0, 0, 0, 0, 0],
+            [7, 0, 0, 0, 0, 0, 0, 0],
+        ];
+        // testalgo[4][0] == testalgo[3][0] == testalgo[2][0];
+        // 1차원으로 펼치고 +8의 index로만 확인할 수 있음
+        // testalgo[16] == testalgo[24] == testalgo[32];
+    </script>
+</body>
+</html>
