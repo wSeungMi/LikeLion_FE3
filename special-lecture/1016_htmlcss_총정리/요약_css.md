@@ -8,19 +8,22 @@
     <img src="assets/img/css_cascading.png" width="200px">
 </div>
 - CSS3, CSS4는 없다?!
-    - CSS 2.1 개발이 완료되고 CSSWG(CSS Working Group)는 더 이상 CSS의 버전을 3, 4와 같은 메이저 업데이트로 가져가지 않기로 결정했기 때문!
+    - CSS 2.1 개발이 완료되고 CSSWG(CSS Working Group)는 더 이상 CSS의 버전을 3, 4와 같은 메이저 업데이트로 가져가지 않기로 결정했기 때문!  
 - CSS 기능의 단위를 모듈(module)이라고 표현한다
 
-<img src="assets/img/css_basic.png" width="300px">
+### CSS의 기본 구조  
+<div align="center">
+    <img src="assets/img/css_basic.png" width="300px">
+</div>
 
 ## 2. CSS 적용
 - 인라인, 내부, 외부, 다중(@import)
 
-### 3. reset css
+## 3. reset css
 - 에릭 마이어의 reset CSS
 - normalize.css (오늘날 가장 많이 사용하는 reset css)
 
-## 주석 및 벤더프리픽스
+## 4. 주석 및 벤더프리픽스
 - `/* 주석은 이렇게 사용합니다. */`
 - 벤더프리픽스 : 벤더(브라우저 제조사)와 프리픽스(접두어)의 합성어
 - https://autoprefixer.github.io/ : VSC에도 익스텐션으로 있음
