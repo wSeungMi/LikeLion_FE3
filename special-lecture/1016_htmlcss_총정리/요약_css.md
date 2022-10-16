@@ -7,8 +7,10 @@
 <div align="center">
     <img src="assets/img/css_cascading.png" width="200px">
 </div>
+
 - CSS3, CSS4는 없다?!
     - CSS 2.1 개발이 완료되고 CSSWG(CSS Working Group)는 더 이상 CSS의 버전을 3, 4와 같은 메이저 업데이트로 가져가지 않기로 결정했기 때문!  
+
 - CSS 기능의 단위를 모듈(module)이라고 표현한다
 
 ### CSS의 기본 구조  
@@ -42,8 +44,9 @@
     }
     ```
 3. 중요성의 원칙 
-<img src="assets/img/css_selector.png" width="200px">
-- https://specificity.keegan.st/  
+<img src="assets/img/css_selector.png" width="300px">
+
+- https://specificity.keegan.st/   
 - !important
 
 ## 6. CSS Box Model
