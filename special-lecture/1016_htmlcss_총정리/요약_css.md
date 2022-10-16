@@ -43,21 +43,23 @@
         color: red;
     }
     ```
-3. 중요성의 원칙 
+3. 중요성의 원칙   
 <img src="assets/img/css_selector.png" width="300px">
 
-- https://specificity.keegan.st/   
-- !important
+- https://specificity.keegan.st/     
+- `!important`
 
 ## 6. CSS Box Model
 - 우리가 실습한 display
-```css
-    display: block;
-    display: inline;
-    display: inline-block;
-    display: flex;
-    display: gird;
-```
+    ```css
+    div {
+        display: block;
+        display: inline;
+        display: inline-block;
+        display: flex;
+        display: gird;
+    }
+    ```
 - block
     - width, height로 조절 가능
     - margin, padding, border 사용 가능
@@ -82,16 +84,18 @@
     - 단위
         - 절대 길이 단위 : px 등
         - 상대 길이 단위 : em, rem, vw, vh, % 등
-    - background-image
-        ```css
-        .home-header {
-            background-image: url("apple.jpg");
-            background-size: cover;
-            background-position: 50% 50%;
-            /* background-position: center center; */
-            background-repeat: no-repeat;
-        }
-        ```
+    - em : 요소의 글자 크기를 기준점으로 함. 요소에 글자 크기가 지정되어 있지 않다면, 폰트 사이즈를 상속 받는 요소의 경우 부모 요소의 글자 크기를 기준점으로 합니다. 상속받지 않는 요소의 경우(ex. `<button>`) 자신의 기본 폰트 사이즈를 기준으로 함
+    - rem : root em. 최상위 요소(`<html>`)의 글자 크기를 기준점으로 하는 배수 단위
+- background-image  
+    ```css  
+    .home-header {
+        background-image: url("apple.jpg");
+        background-size: cover;
+        background-position: 50% 50%;
+        /* background-position: center center; */
+        background-repeat: no-repeat;
+    }
+    ```
 - font 
     - font-size 
     - font-family
@@ -102,8 +106,123 @@
         - ul태그 같은 리스트의 맨 앞에 붙은 bullet 기호는 `list-style-type: none`로 없앨 수 있다
         - 앵커태그의 밑줄은 `text-decortion: none`을 사용하여 제거할 수 있다
 - color
-    - 표기 방법: red, #000, #000000, rgb(0, 0, 0), rgba(100, 100, 100, 0.3), transparent  
-- text 
+    - 표기 방법: red, #000, #000000, rgb(0, 0, 0), rgba(100, 100, 100, 0.3), transparent    
+    ```html
+    <!DOCTYPE html>
+    <html lang="en">
+        <head>
+            <meta charset="UTF-8" />
+            <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+            <meta
+                name="viewport"
+                content="width=device-width, initial-scale=1.0"
+            />
+            <title>Document</title>
+            <style>
+                /*
+                #000000 ~ #FFFFFF
+    
+                bin - 2진수
+                01 10
+                oct - 8진수
+                01234567 10
+                hex - 16진수
+                0123456789abcdef 10
+    
+                R  G  B
+                00 00 00
+    
+                FF 00 00 - Red
+    
+                F00
+                */
+
+                :root {
+                    --main-bg-color: brown;
+                    --sub-bg-color: #0000ff;
+                }
+                div {
+                    width: 100px;
+                    height: 100px;
+                }
+                div:nth-child(1) {
+                    background-color: #red;
+                }
+                div:nth-child(2) {
+                    background-color: var(--main-bg-color);
+                }
+                div:nth-child(3) {
+                    background-color: #ff0000;
+                }
+                div:nth-child(4) {
+                    background-color: #111;
+                }
+                div:nth-child(5) {
+                    background-color: #999;
+                }
+                div:nth-child(6) {
+                    background-color: RGB(255, 87, 51);
+                }
+                div:nth-child(7) {
+                    background-color: rgba(144, 144, 162, 1);
+                }
+                div:nth-child(8) {
+                    background-color: hsl(0, 100%, 50%);
+                }
+                div:nth-child(9) {
+                    background-color: hsla(0, 100%, 50%, 0.5);
+                }
+            </style>
+        </head>
+        <body>
+            <div>hello world 1</div>
+            <div>hello world 2</div>
+            <div>hello world 3</div>
+            <div>hello world 4</div>
+            <div>hello world 5</div>
+            <div>hello world 6</div>
+            <div>hello world 7</div>
+            <div>hello world 8</div>
+            <div>hello world 9</div>
+        </body>
+    </html>
+    ```
+- text
+    ```html
+    <!DOCTYPE html>
+    <html lang="ko">
+        <head>
+            <style>
+                p {
+                    /* margin: 100px; */
+                    line-height: 3;
+                }
+            </style>
+        </head>
+        <body>
+            <p>
+                Lorem ipsum dolor, sit amet consectetur adipisicing elit.
+                Commodi, beatae sint corporis dignissimos magnam sunt? Alias
+                quod provident reprehenderit amet. Perspiciatis tenetur rerum
+                vero explicabo atque expedita omnis repellat magnam. Nihil
+                tenetur doloribus expedita possimus. Maxime voluptatem sint
+                nostrum necessitatibus repellendus earum quasi repudiandae
+                perspiciatis alias molestias odit quam, enim id nam quis
+                eveniet, voluptate sapiente atque! Mollitia, repellat non!
+            </p>
+            <p>
+                Lorem ipsum dolor, sit amet consectetur adipisicing elit.
+                Commodi, beatae sint corporis dignissimos magnam sunt? Alias
+                quod provident reprehenderit amet. Perspiciatis tenetur rerum
+                vero explicabo atque expedita omnis repellat magnam. Nihil
+                tenetur doloribus expedita possimus. Maxime voluptatem sint
+                nostrum necessitatibus repellendus earum quasi repudiandae
+                perspiciatis alias molestias odit quam, enim id nam quis
+                eveniet, voluptate sapiente atque! Mollitia, repellat non!
+            </p>
+        </body>
+    </html>
+    ``` 
 
 ## 8. position
 - position: static
@@ -169,12 +288,41 @@
     }
 
     .item {
-        width: 100px;
+        /* width: 100px; */
         height: 100px;
         border: 1px solid black;
     }
 ```
 - 요새 많이 사용하는 방법 🔽
-```css
+    ```css
+    .wrapper {
+        display: grid;
+        grid-template-columns: repeat(9, 1fr);
+        grid-auto-rows: minmax(100px, auto);
+        grid-template-areas:
+            "hd       hd      hd"
+            "sd       main    main"
+            "ft       ft      ft";
+    }
+    .header {
+        grid-area: hd;
+    }
+    .footer {
+        grid-area: ft;
+    }
+    .content {
+        grid-area: main;
+    }
+    .sidebar {
+        grid-area: sd;
+    }
+    ```
 
-```
+    ```html
+    <div class="wrapper">
+        <div class="header">Header</div>
+        <div class="sidebar">Sidebar</div>
+        <div class="content">Content</div>
+        <div class="footer">Footer</div>
+    </div>
+    ```

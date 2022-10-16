@@ -69,7 +69,7 @@
     - 공백을 병합하고 싶지 않을 때 사용(코드 그대로 출력됨) -> 이게 필요한 이유는? html 특성상 공백을 병합하기 때문
 -   blockquote
     - 인용블록
-    - 참고 : q는 인용구로 주로 문장 안에서 사용된다.
+    - 참고 : q는 인용구(주로 문장 안에 사용)
 -   ol
     - 순서가 있는 목록
     - type이 있다. i, I, 1, a, A..  
@@ -109,7 +109,9 @@
     - a태그 내부에 block 요소 삽입이 가능하다(HTML5부터)
     - html 문법상 sections, grouping content 요소들은 텍스트 레벨 요소의 자식으로 사용되지 않지만, 앵커 태그만 예외적으로 sections, grouping content 요소를 자식으로 하는것이 허용됨
     - 사용자와 인터렉션이 가능한 요소를 자식으로 두지 않기 때문에 주의가 필요하다  
-    (e.g. 잘못된 문법: `a > a`, `a > button`)
+         - e.g. 잘못된 문법
+            - `a > a`
+            - `a > button`
 -   em
     - 스크린리더가 강조해서 읽는다
     - 강조의 의미가 있다
@@ -150,7 +152,7 @@
 -   dbo
 -   span
     - where pharsing content is ecpected(파싱 콘텐츠가 예상되는 곳)
-    - parasing content : phrasing content ..
+    - phrasing content : Phrasing content is the text of the document, as well as elements that mark up that text at the intra-paragraph level.
 -   br
     - 줄바꿈
 -   wbr
@@ -174,14 +176,60 @@
 -   audio
 -   track
 -   map
-    - `<area>` 요소와 함꼐 이미지 맵(클릭 가능한 링크 영역)을 정의할 때 사용한다
-    ```html
-
-    ```
+    - `<area>` 요소와 함께 이미지 맵(클릭 가능한 링크 영역)을 정의할 때 사용한다
+        ```html
+        <div class="intro_img">
+            <img src="images/ceo.png" alt="ceo" usemap="#secret" />
+            <map name="secret">
+                <area
+                    href="./jejuoncoding.html"
+                    target="_blank"
+                    alt="jejucoding"
+                    shape="rect"
+                    coords="500, 300, 750, 600"
+                />
+            </map>
+            <div class="intro_saying">"디딤돌, 전환점이 되어 드리겠습니다."</div>
+        </div>
+        ```
 -   area
 -   Tabular data
 -   table  
     <img src="assets/img/table_markup.png" width="550px">  
+    ```html
+    <table>
+        <caption>
+            제목이나 설명(사용을 권고합니다.)
+        </caption>
+        <colgroup>
+            <!-- 한 열에 공통적인 스타일 -->
+            <col class="구분" />
+            <col class="이름" />
+            <col class="판매량" />
+        </colgroup>
+        <thead>
+            <tr>
+                <th>구분</th>
+                <th>이름</th>
+                <th>판매량</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td>1</td>
+                <td>해리포터</td>
+                <td>100</td>
+            </tr>
+            <!-- ...생략... -->
+        </tbody>
+        <tfoot>
+            <tr>
+                <td colspan="2">총 판매량</td>
+                <td>600</td>
+            </tr>
+        </tfoot>
+    </table>
+    ```
     - `<thead>`, `<tbody>`, `<tfoot>` 기억하자!
         - 특히 `<thead>` 꼭 넣어주기
 -   caption
@@ -208,6 +256,7 @@
         <button type="submit">로그인</button>
     </form>
     ```
+    - 위 코드의 form을 제출했을 경우 `test.html?아이디=hello&패스워드=world`의 형태로 들어감
     - GET 방식 vs POST 방식
         - GET : URL로 데이터를 전달할 때 사용(file같은 큰 파일은 get으로 전송하지 않습니다. id와 pw같은 민감데이터 x)
         - POST : 패킷안에 데이터를 넣어 전달할 때 사용한다. (민감데이터 O, 큰데이터 O)
