@@ -64,8 +64,8 @@ console.log('드모르간 법칙');
 // not B가 항상 falsy한 값이라면 and로 엮어준 not A 부분을 판단할 필요가 없어진다
 // not (A and B) == (not A) or (not B)
 
-// !(a % 3 == 0 || a % 5 == 0) // 아래 코드와 같습니다.
-// !(a % 3 == 0) && !(a % 5 == 0) // 위 코드와 같습니다.
+// !(a % 3 == 0 || a % 5 == 0) // 아래 코드와 같다
+// !(a % 3 == 0) && !(a % 5 == 0) // 위 코드와 같다
 
 for (let i = 0; i < 100; i++) {
     if (!(i % 3 == 0 || i % 5 == 0)) {
@@ -90,8 +90,11 @@ console.log(!(x && y) === (!x || !y));
 console.log([] == ![]) // true
 console.log([] == 0) // true
 
-// 1. 빈 Array는 비교구문이 나왔을 때 강제로 숫자 형변환이 된다.
+// 1. 빈 Array는 비교구문이 나왔을 때 강제로 숫자 형변환이 된다
 console.log(0 == ![])
 
-// 2. ![] == fasle입니다
+// 2. ![] == false
 console.log(0 == false)
+
+// 3. false는 0으로 평가된다
+console.log(0 == 0)
