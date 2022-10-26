@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title></title>
+</head>
+<body>
+    <script>
+        // 행동은 메소드, 상태는 프로퍼티
+        // const me = {
+        //     name : '우승미',
+        //     learnLang : 'JavaScript',
+        //     learnJs : function() {
+        //         console.log("책을 편다.");
+        //         console.log("개념을 본다.");
+        //         console.log("배운 개념으로 실습해본다.");
+        //         console.log("이해가 되지않아 머리를 쥐어뜯는다.");
+        //         console.log("이해하려고 노력한다.");
+        //     },
+        //     JSlevel : function(studyingJS) {
+        //         studyingJS.myLevelUp();
+        //     }
+        // }
+
+        // const studyingJS = {
+        //     level: 1,
+        //     myLevelUp : function() {
+        //         this.level++;
+        //     }
+        // }
+
+        // me.JSlevel(studyingJS);
+
+        // 생성자
+        // Q. 음식 이름의 배열을 전달하면 배열안에서 랜덤하게 메뉴를 뽑아내는 로봇객체의 생성자를 만들어보세요.
+        // 대엽님 코드
+        function NewFactory(food) {
+            this.food = food; 
+            const chosenFood = food[Math.floor(Math.random() * food.length)]
+            this.choice = function () {
+                return (`이번에는 ${chosenFood}을 드시면 됩니다.`);
+            };
+        }
+
+        let whatToEat = new NewFactory(["짜장면", "짬뽕", "탕수육", "깐풍기", "유린기", "볶음밥"]);
+        console.log(whatToEat.choice()); 
+</script>
+</body>
+</html>
