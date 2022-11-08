@@ -1,0 +1,116 @@
+@font-face {
+    font-family: "Pretendard-Regular";
+    src: url("https://cdn.jsdelivr.net/gh/Project-Noonnu/noonfonts_2107@1.1/Pretendard-Regular.woff")
+        format("woff");
+    font-weight: 400;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: "Pretendard-Bold";
+    src: url("https://cdn.jsdelivr.net/gh/Project-Noonnu/noonfonts_2107@1.1/Pretendard-Bold.woff")
+        format("woff");
+    font-weight: 700;
+    font-style: bold;
+}
+
+body {
+    background: radial-gradient(
+        96.74% 276.79% at 3.59% 5.28%,
+        #f0f4ff 0%,
+        #a5b6ee 100%
+    );
+    background-repeat: no-repeat;
+}
+
+#app {
+    font-family: "Pretendard-Regular";
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    padding-bottom: 103px;
+}
+
+.tit {
+    display: inline-block;
+    margin-top: 72px;
+}
+
+.box-timer {
+    margin-top: 60px;
+    width: 400px;
+    height: 360px;
+    border-radius: 16px;
+    background: linear-gradient(144.07deg, #5572bb 2.13%, #374b7c 102.97%);
+    box-shadow: 20px 20px 60px 10px rgba(55, 75, 124, 0.4);
+}
+
+.box-timer .tit-timer {
+    font-family: "Pretendard-Bold";
+    margin-top: 48px;
+    font-size: 24px;
+    color: #fff;
+}
+
+.box-timer .tit-timer::after {
+    display: flex;
+    justify-content: center;
+    content: "";
+    width: 312px;
+    border: 1px solid #fff;
+}
+
+.box-timer .timer {
+    display: flex;
+    justify-content: center;
+    margin-top: 32px;
+}
+
+.box-timer .timer .bg-timer {
+    display: relative;
+    width: 80px;
+    height: 80px;
+    border: 1px solid #354971;
+    border-radius: 4px;
+    background: linear-gradient(314.28deg, #304577 0%, #4c65a0 83%);
+}
+
+.timer .img-dot {
+    width: 6px;
+    height: 26px;
+    display: absolute;
+    top: 30px;
+}
+
+.timer strong {
+    font-family: "Pretendard-Bold";
+    font-size: 12px;
+    color: #a5b6ee;
+}
+
+.txt-corp {
+    margin-top: 60px;
+    font-size: 14px;
+    color: #8596bf;
+}
+
+.btn .btn-start {
+    font-family: "Pretendard-Bold";
+    width: 112px;
+    height: 48px;
+    margin-top: 40px;
+    color: #617199;
+    border-radius: 50px;
+    background-color: #324577;
+}
+
+.btn .btn-reset {
+    font-family: "Pretendard-Bold";
+    width: 112px;
+    height: 48px;
+    margin-top: 40px;
+    color: #617199;
+    border-radius: 50px;
+    background-color: #324577;
+}
