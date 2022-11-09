@@ -1,0 +1,10 @@
+total 24
+drwxr-xr-x  9 seungmi  staff  288 11  9 13:46 .
+drwxr-xr-x  5 seungmi  staff  160 11  9 13:22 ..
+-rw-r--r--  1 seungmi  staff    0 11  9 13:23 001.html
+-rw-r--r--  1 seungmi  staff    0 11  9 13:23 002.html
+-rw-r--r--  1 seungmi  staff   12 11  9 13:45 003.txt
+-rw-r--r--  1 seungmi  staff    0 11  9 13:46 result.txt
+drwxr-xr-x  2 seungmi  staff   64 11  9 13:27 teset
+-rw-r--r--  1 seungmi  staff   12 11  9 13:41 test.txt
+-rw-r--r--  1 seungmi  staff   12 11  9 13:44 test2.txt
