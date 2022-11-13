@@ -21,7 +21,7 @@ function makeClosure() {
     };
 }
 
-// 이제 result 변수 안에는 makeClosure 함수안에 있던 val1, val2 값이 참조되어있게 된ㅏ. 그리고 여기에 접근하는 방법은 오직 getVal1, getVal2 함수만 가능해진다.
+// 이제 result 변수 안에는 makeClosure 함수안에 있던 val1, val2 값이 참조되어있게 된다. 그리고 여기에 접근하는 방법은 오직 getVal1, getVal2 함수만 가능해진다.
 let result = makeClosure(); // result는 객체
 // val1, val2는 비공개 프로퍼티가 됨
 // 접근하려면
