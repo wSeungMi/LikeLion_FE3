@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Async</title>
+</head>
+
+<body>
+    <script async src="test2.js"></script>
+    <h1>Lorem ipsum dolor sit amet consectetur adipisicing elit. Aspernatur error saepe quod. Recusandae eaque sed
+        nihil, magnam perferendis dolores ullam temporibus tempore molestias quidem sit illo eum consectetur quod.
+        Doloremque!</h1>
+    <h2>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Veritatis nostrum hic dolores, vero quidem quos velit
+        tempore repudiandae obcaecati numquam cum vitae a porro? Atque molestiae ullam aperiam nisi repudiandae.</h2>
+
+    <script>
+        console.log('first inline script')
+    </script>
+    <script async src="test1.js"></script>
+    <script>
+        console.log('second inline script')
+    </script>
+
+    <script>
+        console.log('thrid inline script')
+    </script>
+</body>
+
+</html>
