@@ -1,0 +1,92 @@
+<!-- 1122_9시,10시 수업_redux 연습문제 -->
+<!DOCTYPE html>
+<html>
+
+<head>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/redux/4.0.1/redux.js"></script>
+</head>
+
+<body>
+    <style>
+        div {
+            display: inline-block;
+        }
+
+        .container {
+            border: 5px solid black;
+            padding: 10px;
+            width: 100px;
+            height: 200px;
+            display: inline-block;
+            border-radius: 0px;
+        }
+    </style>
+
+    <button onclick="
+    store.dispatch({type:'CHANGE_RADIUS', borderRadius:'0px'})">사각형</button>
+    <button onclick="
+    store.dispatch({type:'CHANGE_RADIUS', borderRadius:'5%'})">둥근사각형</button>
+    <button onclick="
+    store.dispatch({type:'CHANGE_RADIUS', borderRadius:'50%'})">원</button>
+
+    <br><br><br>
+
+    <div id="one"></div>
+    <div id="two"></div>
+    <div id="three"></div>
+
+    <script>
+        function reducer(state, action) {
+            if (state === undefined) {
+                // 초기화가 안되있을 때 초기화를 뭘로 할거냐
+                // 객체 key값은 바꿀 수 있음
+                return {
+                    borderRadius: "0px",
+                }
+            }
+
+            var newState;
+            if (action.type === 'CHANGE_RADIUS') {
+                newState = { ...state, borderRadius: action.borderRadius };
+            }
+            return newState;
+        }
+
+        // 1. store 생성
+        var store = Redux.createStore(
+            reducer,
+            window.__REDUX_DEVTOOLS_EXTENSION__ && window.__REDUX_DEVTOOLS_EXTENSION__() // redux dev tools를 사용하기 위한 코드
+        );
+
+        function one() {
+            var state = store.getState();
+            document.querySelector('#one').innerHTML = `
+                <div class="container" style="border-radius:${state.borderRadius}"></div>
+            `;
+        }
+        store.subscribe(one);
+        one();
+
+        function two() {
+            var state = store.getState();
+            document.querySelector('#two').innerHTML = `
+                <div class="container" style="border-radius:${state.borderRadius}"></div>
+            `;
+        }
+        store.subscribe(two);
+        two();
+
+        function three() {
+            var state = store.getState();
+            document.querySelector('#three').innerHTML = `
+                <div class="container" style="border-radius:${state.borderRadius}"></div>
+            `;
+        }
+        store.subscribe(three);
+        three();
+
+
+    </script>
+</body>
+
+</html>
