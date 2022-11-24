@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title></title>
+</head>
+
+<body>
+    <script>
+        // 'use strict'
+
+        // 1. 선언하지 않은 변수에 값을 할당할 수 없다
+        // str = "hello strict"
+
+        // 2. 읽기 전용 객체에 값을 할당하면 에러가 발생한다
+        // var를 사용하게되면 일부 예약어도 변수명으로 사용할 수 있게 되서 사용하지말자!
+        // 하지만 자스 일반모드에서도 아래 코드들을 다행히 무시한다고 함(에러라고 인식은 함ㅋㅋㅋ) = 조용한 에러
+        // var undefined = 'undefined' // let으로 선언했을 때는 예약어 사용으로 에러를 잡아주는데 var는 안잡아줌
+        // var Infinity = 100;
+
+        // ? 3.14가 싫어서 0으로 값을 할당할 수 있다니...!
+        // Math.PI = 0;
+
+        // const employee = {
+        //     firstname: "Jhon",
+        //     lastname: "Doe"
+        // }
+
+        // console.log(meployee.firstname)
+
+        // 3. 지울수 없는 값을 지우려고 하면 에러가 발생한다
+        // 오브젝트 속성 중에 객체의 속성을 제거하는 키워드 = delete
+        // 사용자 정의 객체의 프로퍼티만 삭제 가능함!
+        // delete employee.firstname;
+        // console.log(employee.firstname)
+
+        // 원래 내장(native)코드로 들어가있는 키워드들은 삭제 불가능함
+        // 일반 자스 = 조용한 에러, 엄격 모드 = 에러 바로 뿜뿜
+        // delete Object.prototype;
+
+        // 4. 함수 파라메터에 중복된 이름을 사용할 수 없다
+        function myFunc(a, a, b) {
+            console.log(a + a + b)
+        }
+
+        myFunc(1, 2, 3) // 7이 출력됨 -> 함수안에 똑같은 변수를 두번 할당하는 것과 같아서
+
+    </script>
+</body>
+
+</html>
