@@ -1,9 +1,11 @@
 import { useState } from "react";
+import { useLogin } from "../../hooks/useLogin";
 import styles from "./Login.module.css";
 
 export default function Login() {
     const [email, setEmail] = useState("");
     const [password, setPassword] = useState("");
+    const { error, isPending, login } = useLogin();
 
     const handleData = (event) => {
         console.log(event.target.type);
@@ -16,7 +18,8 @@ export default function Login() {
 
     const handleSubmit = (event) => {
         event.preventDefault(); // 화면 새로고침을 막기위해 기본동작 막음
-        console.log(email, password);
+        login(email, password);
+        // console.log(email, password);
     };
 
     return (
@@ -41,9 +44,15 @@ export default function Login() {
                     onChange={handleData}
                 />
 
-                <button type="submit" className={styles.btn}>
-                    로그인
-                </button>
+                {/* 조건부 랜더링을 사용합니다. 로그인이 진행 전이라면 로그인 버튼을 노출하고 */}
+                {!isPending && (
+                    <button type="submit" className={styles.btn}>
+                        로그인
+                    </button>
+                )}
+                {/* 로그인이 진행 중이라면 로그인 버튼을 제거하고 정보를 표시합니다. */}
+                {isPending && <strong>로그인이 진행중입니다...</strong>}
+                {error && <strong>{error}</strong>}
             </fieldset>
         </form>
     );
