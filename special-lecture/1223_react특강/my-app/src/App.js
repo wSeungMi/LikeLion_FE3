@@ -1,42 +1,76 @@
 import React, { useEffect, useState } from "react";
 
-function AddCalculator() {
-    const [num1, setNum1] = useState(0); // useState라는 함수 실행결과로 배열이 나온다.
-    const [num2, setNum2] = useState(0);
-    console.log(num1); //배열의 0번째는 값이나오고 1번째는 함수(값을 바꿔주는)가나온다.
-    useEffect(() => console.log("값이바뀜"), [num1, num2]);
-    console.log(num1, "함수실행 했을 때 num1");
-
-    console.log("더하기 컴포넌트 함수가 실행되었습니다.");
+function AddCalculator(props) {
     return (
         <div>
             <h2>더하기</h2>
             <input
                 type="number"
                 name="num1"
-                onChange={(e) => {
-                    setNum1(Number(e.target.value)); //리액트야! Number(e.target.value)이 값으로 바꿔줘!
-                    // console.log(num1)
-                }}
+                value={props.num1}
+                onChange={props.handleNum1}
             />
             <input
                 type="number"
                 name="num2"
-                onChange={(e) => {
-                    setNum2(Number(e.target.value));
-                    // console.log(num2)
-                }}
+                value={props.num2}
+                onChange={props.handleNum2}
             />
-            결과 : {num1 + num2}
+            결과 : {props.num1 + props.num2}
         </div>
     );
 }
 
+function SubCalculator(props) {
+    return (
+        <div>
+            <h2>빼기</h2>
+            <input
+                type="number"
+                name="num1"
+                value={props.num1}
+                onChange={props.handleNum1}
+            />
+            <input
+                type="number"
+                name="num2"
+                value={props.num2}
+                onChange={props.handleNum2}
+            />
+            결과 : {props.num1 - props.num2}
+        </div>
+    );
+}
 function App() {
+    return <Container />;
+}
+
+function Container() {
+    const [num1, setNum1] = useState(0);
+    const [num2, setNum2] = useState(0);
+    const handleNum1 = (e) => {
+        const newNum1 = parseInt(e.target.value);
+        setNum1(newNum1);
+    };
+    const handleNum2 = (e) => {
+        const newNum2 = parseInt(e.target.value);
+        setNum2(newNum2);
+    };
     return (
         <div>
             <h1>계산기</h1>
-            <AddCalculator />
+            <AddCalculator
+                num1={num1}
+                num2={num2}
+                handleNum1={handleNum1}
+                handleNum2={handleNum2}
+            />
+            <SubCalculator
+                num1={num1}
+                num2={num2}
+                handleNum1={handleNum1}
+                handleNum2={handleNum2}
+            />
         </div>
     );
 }
